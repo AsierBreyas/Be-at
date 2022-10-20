@@ -1,0 +1,17 @@
+package HilosConContadorCompartido;
+
+public class Mineros implements Runnable{
+	
+	String nombre;
+	Integer contador;
+	
+	public Mineros(String nombre, Integer contador){
+		this.nombre = nombre;
+		this.contador = contador;
+	}
+
+	@Override
+	public void run() {
+		
+	}
+}

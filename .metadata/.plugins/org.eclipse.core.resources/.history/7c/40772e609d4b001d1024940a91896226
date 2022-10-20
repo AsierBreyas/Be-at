@@ -1,0 +1,19 @@
+package PruebaTarea;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> listaTareas = new ArrayList();
+		System.out.println("¿Cuantas ejecuciones tocan hoy?");
+		for(int i = 0; i < 3; i++) {
+			listaTareas.add(new Tarea(i + 1 *5));
+		}
+		for(Tarea t : listaTareas) {
+			t.ejecutar();
+		}
+	}
+
+}

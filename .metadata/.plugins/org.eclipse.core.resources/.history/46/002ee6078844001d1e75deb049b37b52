@@ -1,0 +1,27 @@
+package NsLookUp2;
+
+import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		String ip = "";
+		System.out.println("Ip. Ya.");
+		Scanner sc = new Scanner(System.in);
+		ip = sc.nextLine();
+		String comando = "nslookup " + ip;
+		ProcessBuilder pb = new ProcessBuilder("cmd.exe", "/C", comando);
+		pb.redirectOutput(Redirect.INHERIT);
+		pb.redirectError(Redirect.INHERIT);
+		try {
+			Process pr = pb.start();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

@@ -1,0 +1,13 @@
+
+public class Herramienta extends NoPerecedero implements Enviable{
+	double valor_iva = 0.4;
+	
+	Herramienta(int codigo, String nombre, double precio, int cantidad, double peso){
+		super(codigo, nombre, precio, cantidad, peso);
+	}
+//	Herramienta (Scanner in){
+//		
+//	}
+	
+	
+}

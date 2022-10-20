@@ -1,0 +1,22 @@
+package HilosConContadorCompartido;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Mineros implements Runnable{
+	
+	String nombre;
+	Piedras piedra;
+	
+	public Mineros(String nombre, Piedras piedra){
+		this.nombre = nombre;
+		this.piedra = piedra;
+	}
+
+	@Override
+	public void run() {
+		for(int i = 1; i < 6; i++) {
+			int piedras = piedra.cantidad.getAndIncrement();
+			System.out.println(nombre  +" ha consegido " + i + " cantidad de piedra. ¡Tenemos un total de " + piedras + " unidades de piedra!");
+		}
+	}
+}

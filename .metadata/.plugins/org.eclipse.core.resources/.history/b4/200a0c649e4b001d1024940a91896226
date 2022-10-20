@@ -1,0 +1,25 @@
+package PruebaTarea;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<Tarea> listaTareas = new ArrayList();
+		System.out.println("¿Cuantas ejecuciones tocan hoy?");
+		Scanner in = new Scanner(System.in);
+		int maximo = in.nextInt() + 1;
+		for(int i = 0; i < maximo; i++) {
+			listaTareas.add(new Tarea(i + 1 *5));
+		}
+		for(int i = 0; i < listaTareas.size(); i++) {
+			Verdugo verdugo = new Verdugo(listaTareas.get(i), "Eustaquio " + i);
+		}
+//		for(Tarea t : listaTareas) {
+//			t.ejecutar();
+//		}
+	}
+
+}

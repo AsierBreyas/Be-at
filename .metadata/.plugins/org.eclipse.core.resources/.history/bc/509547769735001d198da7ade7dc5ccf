@@ -1,0 +1,17 @@
+
+public class SuperOnline {
+	public static void main(String[] args) {
+	}
+	private void  mostrarMenuInventario() {
+		
+	}
+	private int mostrarMenuActualizarInventario() {
+		return 0;
+	}
+	private void mostrarMenuAddNuevoProducto() {
+		
+	}
+	private int leerOpcion(int id) {
+		return 0;
+	}
+}

@@ -1,0 +1,13 @@
+package HilosConContadorCompartido;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Integer contador = 0;
+		for(int i = 0; i < 100; i++) {
+			Thread minero = new Thread(new Mineros("Steve "+ i, contador));
+		}
+
+	}
+
+}

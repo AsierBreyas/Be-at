@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="FileReader fr = new FileReader(archivo);"/>
+		<list key="findhistory">
+			<item value="FileReader fr = new FileReader(archivo);"/>
+			<item value="//&#x09;Perecedero(Scanner in){"/>
+			<item value="Rectangulo(){"/>
+		</list>
+	</section>
+</section>

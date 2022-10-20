@@ -1,0 +1,125 @@
+package CreacionDeTablas;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Connection c = null;
+		try {
+			c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Nombre de usuario");
+		String usuario = sc.nextLine();
+		System.out.println("La contraseña de usuario");
+		String contraseña = sc.nextLine();
+		Boolean login = login(usuario, contraseña, c);
+		meterDatos();
+//		actualizarDatos();
+//		eliminarDatos();
+		selectDatos();
+	}
+
+	public static void crearBase() {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					CREATE TABLE Clientes(
+					Nombre VARCHAR(35) NOT NULL,
+					Apellido VARCHAR(35) NOT NULL,
+					DNI CHAR(9) NOT NULL,
+					CP CHAR(5) NOT NULL,
+					PRIMARY KEY (DNI)
+					)
+					""");
+			statement.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void meterDatos() {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					INSERT INTO clientes
+					(Nombre, Apellido, DNI, CP)
+					VALUES('Eustaquio', 'Habichuela', '25601472R', '36914');
+										""");
+			statement.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void actualizarDatos() {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					UPDATE clientes
+					SET Nombre='Perro', Apellido='Estupido'
+					WHERE DNI='25601472R';
+												""");
+			statement.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void eliminarDatos() {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					DELETE FROM clientes
+					WHERE DNI='25601472R';
+																	""");
+			statement.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void selectDatos() {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					SELECT *
+					FROM clientes
+					""");
+			ResultSet r = statement.executeQuery();
+			while (r.next()) {
+				System.out.println("- DNI: " + r.getString("DNI"));
+				System.out.println("\n\t- Nombre: " + r.getString("Nombre"));
+				System.out.println("\n\t- Apellido: " + r.getString("Apellido"));
+				System.out.println("\n\t- CP: " + r.getString("CP"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static Booelan login(String nombre, String contraseña, Connection c) {
+		try {
+			PreparedStatement statement = c.prepareStatement("""
+					SELECT DNI, Nombre
+					FROM clientes
+					""");
+			ResultSet r = statement.executeQuery();
+			Boolean encontrado = false;
+			while (r.next() || encontrado) {
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

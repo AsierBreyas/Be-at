@@ -1,0 +1,20 @@
+package PruebaTarea;
+
+public class Tarea {
+	
+	int tiempo;
+	
+	public Tarea(int tiempo) {
+		this.tiempo = (tiempo * 1000)/2;
+	}
+	
+	public void ejecutar() {
+		try {
+			System.out.println("Empieza la ejecución. Tendrás un tiempo de " + tiempo + "para decir tus ultimas palabras");
+			Thread.sleep(tiempo);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,31 @@
+import java.util.Random;
+import static javax.swing.JOptionPane.showMessageDialog;
+
+public class Rectangulo  extends FiguraGeometrica implements Animable{
+	private double altura;
+	private double ancho;
+	Random random = new Random();
+    
+	@Override
+	double perimetro() {
+    	return  Math.round((altura * 2) + (ancho * 2) * 100.0)/100.0;
+    }
+	@Override
+	double superficie() {
+    	return Math.round((altura * ancho) * 100.0)/100.0;
+    }
+	Rectangulo(String id,double altura, double ancho){
+		super("id");
+		this.altura = altura;
+		this.ancho = ancho;
+	}
+	Rectangulo(){
+		super("Rectangulo");
+		altura = random.nextDouble() * 10;
+		ancho = random.nextDouble() * 10;
+	}
+	@Override
+	public void mover() {
+		showMessageDialog(null, "MIRA COMO ME MUEVO FIUUUUUUUUUUUU");
+	}
+}

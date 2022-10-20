@@ -1,0 +1,5 @@
+
+public class Perecedero extends Producto {
+	private String fechaCaducidad;
+	
+}

@@ -1,0 +1,10 @@
+
+public class Hilo1 extends Thread{
+	long hilo;
+	Hilo1(long hilo){
+		this.hilo = hilo;
+	}
+	public void  run() {
+		
+	}
+}

@@ -1,0 +1,15 @@
+
+public class Hilo1 extends Thread{
+	String nombreHilo;
+	Hilo1(String nombreHilo){
+		this.nombreHilo = nombreHilo;
+	}
+	@Override
+	public void  run() {
+		int i= 1;
+		while(true) {
+			System.out.println("NOS PEGAN " + i + " veces");
+			i++;
+		}
+	}
+}

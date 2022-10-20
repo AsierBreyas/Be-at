@@ -1,0 +1,19 @@
+package PruebaTarea;
+
+public class Tarea {
+	
+	int tiempo;
+	
+	public Tarea(int tiempo) {
+		this.tiempo = tiempo;
+	}
+	
+	public void ejecutar() {
+		try {
+			Thread.sleep(tiempo);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

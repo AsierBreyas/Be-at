@@ -1,0 +1,22 @@
+import java.util.Random;
+
+public class Rectangulo  extends FiguraGeometrica{
+	private double altura;
+	private double ancho;
+	Random random = new Random();
+    
+	double perimetro() {
+    	return  Math.round((altura * 2) + (ancho * 2) * 100.0)/100.0;
+    }
+	double superficie() {
+    	return Math.round((altura * ancho) * 100.0)/100.0;
+    }
+	Rectangulo(double altura, double ancho){
+		this.altura = altura;
+		this.ancho = ancho;
+	}
+	Rectangulo(){
+		altura = random.nextDouble() * 10;
+		ancho = random.nextDouble() * 10;
+	}
+}

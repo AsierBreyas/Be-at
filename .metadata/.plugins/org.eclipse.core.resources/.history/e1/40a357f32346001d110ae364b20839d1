@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		for(int i = 0 ; i < 150; i++) {
+			Hilo1 hilo1 = new Hilo1(Integer.toString(i));
+			hilo1.start();
+		}
+
+	}
+
+}

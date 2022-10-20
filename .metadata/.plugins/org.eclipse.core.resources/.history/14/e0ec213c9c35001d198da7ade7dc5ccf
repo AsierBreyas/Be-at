@@ -1,0 +1,6 @@
+
+public class NoPerecedero extends Producto{
+	NoPerecedero(int codigo, String nombre, double precio, int cantidad, double peso){
+		super(codigo, nombre, precio, cantidad, peso);
+	}
+}

@@ -1,0 +1,24 @@
+import java.util.Random;
+import java.util.ArrayList;
+public class Main {
+	public static void main(String[] args) {
+		Random random = new Random();
+		for(int i = 0; i < 150; i++ ) {
+			Rectangulo rec = new Rectangulo();
+			Triangulo tri = null ;
+			ArrayList figuras = new ArrayList();
+			try{
+				tri = new Triangulo(random.nextDouble()*100, random.nextDouble()*100, random.nextDouble()*100 );
+			}catch(Exception e){
+				System.out.println("Error al crear el triangulo");
+			}
+//			Rectangulo rec = new Rectangulo(Random.nextDouble() * 100, Random.nextDouble() * 100);
+			System.out.printf("- Rectangulo Nº %d: \n\t - Supercifie: %f \n\t - Perimetro: %f\n", i+1, rec.superficie(), rec.perimetro());
+			if(tri != null)
+			System.out.printf("- Triangulo Nº %d: \n\t - Supercifie: %f \n\t - Perimetro: %f\n", i+1, tri.superficie(), tri.perimetro());
+			else
+			System.out.println("No hay tringulo");
+//			System.out.println(" - Rectangulo Nº" + (i + 1)  + ":\n\t - Superficie: " + rec.superficie() + "\n\t - Perimetro: " + rec.perimetro());			
+		}
+	}
+}

@@ -1,0 +1,21 @@
+package Autoincremental;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Main {
+	public static void main(String[] args) {
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement(Statement.RETURN_GENERATED_KEYS);
+			ResultSet r = statement.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

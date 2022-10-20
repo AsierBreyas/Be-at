@@ -1,0 +1,8 @@
+package PruebaTarea;
+
+public class Verdugo implements Runnable{
+	@Override
+	public void run() {
+		
+	}
+}

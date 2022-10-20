@@ -1,0 +1,7 @@
+package PruebaTarea;
+
+public class Tarea {
+	public void ejecutar() {
+		Thread.sleep(tiempo);
+	}
+}

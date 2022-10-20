@@ -1,0 +1,8 @@
+package MultiplesHilos;
+
+public class HiloI implements Runnable{
+	@Override
+	public void run() {
+		
+	}
+}

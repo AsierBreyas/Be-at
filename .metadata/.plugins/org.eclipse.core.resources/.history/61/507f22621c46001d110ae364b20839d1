@@ -1,0 +1,14 @@
+
+public class Hilo1 extends Thread{
+//	long hilo;
+//	Hilo1(long hilo){
+//		this.hilo = hilo;
+//	}
+	@Override
+	public void  run() {
+		int i= 1;
+		while(true) {
+			System.out.println("NOS PEGAN");
+		}
+	}
+}

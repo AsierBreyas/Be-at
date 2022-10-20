@@ -1,0 +1,10 @@
+
+public class Otros extends NoPerecedero{
+	private String categoria;
+	private double valor_iva = 0.16;
+	
+	Otros(int codigo, String nombre, double precio, int cantidad, double peso){
+		super(codigo, nombre, precio, cantidad, peso);
+		
+	}
+}

@@ -1,0 +1,31 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Que tipo de patata te sientes hoy");
+		Scanner sc = new Scanner(System.in);
+		String patata = sc.nextLine();
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					SELECT nombre
+					FROM patata
+					""");
+			ResultSet r = statement.executeQuery();
+			while(r.next()) {
+				System.out.printf("%d, %s, %s \n", r.getInt("id"), r.getString(2), r.getString(3));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

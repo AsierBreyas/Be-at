@@ -1,0 +1,20 @@
+package HilosConContadorCompartido;
+
+public class Constructor extends Thread{
+	String nombre;
+	Piedras piedra;
+	int num;
+	
+	public Constructor(String nombre, Piedras piedra, int num){
+		this.nombre = nombre;
+		this.piedra = piedra;
+	}
+
+	@Override
+	public void run() {
+		for(int i = 1; i < 6; i++) {
+			piedra.colocar();
+			System.out.println(nombre  +" ha colocado " + i + " cantidad de piedra. ¡Tenemos un total de " + piedra.cantidad + " unidades de piedra!");
+		}
+	}
+}

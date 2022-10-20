@@ -1,0 +1,14 @@
+package PruebaTarea;
+
+public class Tarea {
+	
+	int tiempo;
+	
+	public Tarea(int tiempo) {
+		this.tiempo = tiempo;
+	}
+	
+	public void ejecutar() {
+		Thread.sleep(tiempo);
+	}
+}

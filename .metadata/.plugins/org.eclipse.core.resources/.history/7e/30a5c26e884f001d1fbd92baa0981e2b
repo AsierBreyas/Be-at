@@ -1,0 +1,10 @@
+package HilosConContadorCompartido;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class Piedras {
+	AtomicInteger cantidad = new AtomicInteger();
+	public void picar() {
+		
+	}
+}

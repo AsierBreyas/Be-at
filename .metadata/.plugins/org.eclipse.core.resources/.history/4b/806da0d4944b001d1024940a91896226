@@ -1,0 +1,27 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		try {
+			Connection c = DriverManager.getConnection("jdbc:mariadb://localhost:3306/prueba", "root", "a");
+			PreparedStatement statement = c.prepareStatement("""
+					SELECT id, nombre Password
+					FROM patata
+					""");
+			ResultSet r = statement.executeQuery();
+			while(r.next()) {
+				System.out.printf("%d, %s, %s", r.getInt("id"), r.getString(1), r.getString(2));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

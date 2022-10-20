@@ -1,0 +1,26 @@
+
+public abstract class Perecedero extends Producto implements Enviable{
+	
+	private String fechacad;
+	
+	Perecedero(int codigo, String nombre, double precio, int cantidad, double peso, String fechacad){
+		super(codigo, nombre, precio, cantidad, peso);
+		this.fechacad = fechacad;
+	}
+	
+//	Perecedero(Scanner in){
+//		
+//	}
+	
+	public double tarifaEnvio() {
+		return 0;
+	}
+	
+	public void imprimir() {
+		
+	}
+	
+	public String volcar() {
+		return "";
+	}
+}

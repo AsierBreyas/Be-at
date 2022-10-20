@@ -1,0 +1,14 @@
+import java.util.Random;
+
+public class Triangulo {
+	private double lado1;
+	private double lado2;
+	private double lado3;
+	Random random = new Random();
+
+	Triangulo(){
+		lado1 = random.nextDouble() * 10;
+		lado2 = random.nextDouble() * 10;
+		lado3 = random.nextDouble() * 10;
+	}
+}

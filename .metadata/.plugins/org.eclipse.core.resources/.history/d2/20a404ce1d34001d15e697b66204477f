@@ -1,0 +1,7 @@
+
+public class Circulo {
+	double radio;
+	Circulo(){
+		
+	}
+}

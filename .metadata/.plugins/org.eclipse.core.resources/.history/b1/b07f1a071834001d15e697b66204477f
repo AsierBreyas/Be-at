@@ -1,0 +1,6 @@
+
+public class FiguraGeometrica {
+	double superficie() {
+		return 0;
+	}
+}

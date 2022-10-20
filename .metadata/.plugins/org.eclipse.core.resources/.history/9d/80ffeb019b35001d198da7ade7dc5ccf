@@ -1,0 +1,10 @@
+
+public class Perecedero extends Producto {
+	
+	private String fechacad;
+	
+	Perecedero(int codigo, String nombre, double precio, int cantidad, double peso, String fechacad){
+		super(codigo, nombre, precio, cantidad, peso);
+		this.fechacad = fechacad;
+	}
+}

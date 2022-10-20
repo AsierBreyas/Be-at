@@ -1,0 +1,25 @@
+
+public class Hilo1 extends Thread {
+	String nombreHilo;
+
+	Hilo1(String nombreHilo) {
+		this.nombreHilo = nombreHilo;
+	}
+
+//	public void setNombre(String nombreHilo) {
+//		this.nombreHilo = nombreHilo;
+//	}
+	@Override
+	public void run() {
+//		int i = 0;
+//			i++;
+		System.out.println("NOS PEGAN " + nombreHilo + " veces");
+		try {
+			sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Como que te han pegado " + nombreHilo);
+	}
+}

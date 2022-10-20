@@ -1,0 +1,16 @@
+package HilosConContadorCompartido;
+
+public class Piedras {
+	Integer cantidad = 0;
+	Object lock = new Object();
+	public void picar() {
+			cantidad = cantidad + 1;
+	}
+	public void colocar() {
+			cantidad = cantidad - 1;
+	}
+//	AtomicInteger cantidad = new AtomicInteger();
+//	public void picar() {
+//		
+//	}
+}

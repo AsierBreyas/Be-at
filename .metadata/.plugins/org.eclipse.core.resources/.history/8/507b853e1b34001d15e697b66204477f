@@ -1,0 +1,9 @@
+
+abstract class FiguraGeometrica {
+	double superficie() {
+		return 0;
+	}
+	double perimetro() {
+		return 0;
+	}
+}

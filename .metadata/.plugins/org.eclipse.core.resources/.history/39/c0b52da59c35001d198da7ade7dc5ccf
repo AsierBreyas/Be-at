@@ -1,0 +1,4 @@
+
+public class Herramienta {
+	double valor_iva = 0.4;
+}
